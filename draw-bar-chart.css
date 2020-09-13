@@ -1,16 +1,26 @@
 #chart {
-  margin: 0 auto;
+  
+}
+#main {
   display: block;
   text-align: center;
+  margin: 0 auto;
 }
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   width: 200px;
   height: 200px;
+  margin: 100px auto;
+  text-align: center;
 
 }
 
+.graph-bar {
+  color: red;
+
+
+}
 

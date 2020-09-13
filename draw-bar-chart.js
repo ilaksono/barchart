@@ -26,11 +26,18 @@ function xAxisLabels(num) {
 }
 
 function createGrid(num) {
+  let toAdd = document.createDocumentFragment();
   // document.getElementById('graph').style['grid-template-columns'] = 'repeat(' + num + ', 1fr)';
   for(let i = 0; i < num; i++) {
-    $('#graph').append($('<div id="bar' + i +'" class="graph-bar"></div>'));
+    var newDiv = document.createElement('div');
+    newDiv.id = 'bar' + i;
+    newDiv.className = 'graph-bar';
+    toAdd.appendChild(newDiv);
+    // $('#graph').append($('<div id="bar' + i +'" class="graph-bar"></div>'));
+    // $('#div'+ i).text($('hello' + i));
     console.log('bar' + i);
   } 
+  document.appendChild(toAdd);
 }
 
 function barValues(arr) {
@@ -42,8 +49,11 @@ function barValues(arr) {
 
   for(let i = 0; i < arr.length; i++) {
     let temp = document.getElementById('bar' + i);
-    temp.createAttribute('width');
-    temp.style.width = arr[i] / max;
+    console.log(temp);
+    let att = document.createAttribute('width');
+    att.value = arr[i] / max * 10;
+    temp.setAttribute(att);
+    temp.innerHTML = "hello" + i;
   }
 
 }
